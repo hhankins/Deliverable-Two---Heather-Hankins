@@ -6,10 +6,12 @@ namespace Deliverable_Two___Heather_Hankins
     {
         static void Main(string[] args)
         {
-            bool somethingElse = true; 
-            
+            bool somethingElse = true;
+
+
             Console.WriteLine("Hello! My name is ChatBot. I hope you are doing well today.");
             Console.WriteLine();
+            string storedInput = "";
 
             do
             {
@@ -22,13 +24,22 @@ namespace Deliverable_Two___Heather_Hankins
                     return;
                 }
 
-                if (userInput1 == "hello")
+                else if (userInput == storedInput)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("I'm sorry, but you have already said that.");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
+
+                else if (userInput1 == "hello")
                 {
                     Console.WriteLine();
                     Console.WriteLine("Hi good to see you");
                     Console.WriteLine();
                     Console.WriteLine();
                 }
+
 
                 else if (userInput1 == "sup")
                 {
@@ -46,21 +57,19 @@ namespace Deliverable_Two___Heather_Hankins
                     Console.WriteLine();
                 }
 
-            } while (somethingElse);
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("I'm sorry - I don't understand.");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                }
 
-            Console.WriteLine("Is there something you would like to say to me?");
-            string somethingElse1 = Console.ReadLine();
+                    storedInput = userInput1;
 
-            if (somethingElse1.ToLower() == "hello" || somethingElse1.ToLower() == "sup" || somethingElse1.ToLower() == "hello there")
-            {
-                somethingElse = true;
-            }
-            else
-            {
-                somethingElse = false;
-            }
-
-        } 
+                } while (somethingElse) ;
+            
+       
+        }
     }
 }
-        //Console.WriteLine("I'm sorry, but you have already said that."); 
